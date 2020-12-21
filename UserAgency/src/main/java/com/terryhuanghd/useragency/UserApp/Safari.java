@@ -13,9 +13,9 @@ public class Safari implements UserApp {
     String build = "15E148";
 
     /*
-    iPhone / iPad
+    // iPhone / iPad
     AppleWebKit/{$layoutEngine} (KHTML, like Gecko) Version/{softwareVersion} Mobile/{$build} Safari/{$layoutEngine}
-    Mac
+    // Mac
     AppleWebKit/{$layoutEngine} (KHTML, like Gecko) Version/{softwareVersion} Safari/{$layoutEngine}
     */
 
@@ -34,11 +34,7 @@ public class Safari implements UserApp {
         UserDevice device = userDevice.get();
 
         if (device == null) {
-            return String.format("AppleWebKit/%s (KHTML, like Gecko) Version/%s Mobile/%s Safari/%s",
-                    layoutEngine,
-                    softwareVersion,
-                    build,
-                    layoutEngine);
+            return "";
         }
 
         if (device instanceof Mac) {

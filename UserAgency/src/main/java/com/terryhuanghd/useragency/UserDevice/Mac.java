@@ -1,5 +1,6 @@
 package com.terryhuanghd.useragency.UserDevice;
 
+import com.terryhuanghd.useragency.UserApp.FireFox;
 import com.terryhuanghd.useragency.UserApp.UserApp;
 
 import java.lang.ref.WeakReference;
@@ -7,16 +8,12 @@ import java.lang.ref.WeakReference;
 public class Mac implements UserDevice {
     WeakReference<UserApp> userApp;
 
-    String osVersion = "11_1";
+    String osVersion = "11.1";
 
     /*
-    Safari
-    Macintosh; Intel Mac OS X {$osVersion}
-    Chrome
+    // Safari / Chrome //Edge
     Macintosh; Intel Mac OS X {$osVersion}
     FireFox
-    Macintosh; Intel Mac OS X 11.1 <-
-    Edge
     Macintosh; Intel Mac OS X {$osVersion}
     */
 
@@ -29,7 +26,16 @@ public class Mac implements UserDevice {
     public String getResultSystemInformation() {
         UserApp app = userApp.get();
 
+        if (app == null) {
+            return "";
+        }
+
+        if (app instanceof FireFox) {
+            return String.format("Macintosh; Intel Mac OS X %s",
+                    osVersion);
+        }
+
         return String.format("Macintosh; Intel Mac OS X %s",
-                osVersion);
+                osVersion.replace(".", "_"));
     }
 }

@@ -10,16 +10,10 @@ public class PC implements UserDevice {
     String osVersion = "10.0";
 
     /*
-    Chrome
+    // Chrome / FireFox / Edge / IE
     Windows NT {$osVersion}; Win64; x64
     Windows NT {$osVersion}; WOW64
     Windows NT {$osVersion}
-    FireFox
-    Windows NT {$osVersion}; Win64; x64
-    Edge
-    Windows NT {$osVersion}; Win64; x64
-    IE
-    Windows NT {$osVersion}; WOW64;
     */
 
     @Override
@@ -30,6 +24,10 @@ public class PC implements UserDevice {
     @Override
     public String getResultSystemInformation() {
         UserApp app = userApp.get();
+
+        if (app == null) {
+            return "";
+        }
 
         return String.format("Windows NT %s; Win64; x64",
                 osVersion);

@@ -8,22 +8,25 @@ import com.terryhuanghd.useragency.UserDevice.iPhone;
 
 import java.lang.ref.WeakReference;
 
-public class Chrome implements UserApp {
+public class FireFox implements UserApp {
     WeakReference<UserDevice> userDevice;
 
     String layoutEngine_iOS = "605.1.15";
+    String softwareVersion_iOS = "29.0";
     String build_iOS = "15E148";
 
-    String layoutEngine = "537.36";
-    String softwareVersion = "87.0.4280.88";
+    String softwareVersion = "84.0";
+    String geckoVersion_PC_Mac = "20100101";
 
     /*
     // iPhone / iPad
-    AppleWebKit/{$layoutEngine_iOS} (KHTML, like Gecko) CriOS/{softwareVersion} Mobile/{$build_iOS} Safari/{$layoutEngine_iOS}
+    AppleWebKit/{$layoutEngine_iOS} (KHTML, like Gecko) FxiOS/{$softwareVersion_iOS} Mobile/{$build_iOS} Safari/{$layoutEngine_iOS}
     // Android Phone / Tablet
-    AppleWebKit/{$layoutEngine} (KHTML, like Gecko) Chrome/{softwareVersion} Mobile Safari/{$layoutEngine}
+    ; rv:{$softwareVersion}
+    Gecko/{$softwareVersion} Firefox/{$softwareVersion}
     // Mac / PC
-    AppleWebKit/{$layoutEngine} (KHTML, like Gecko) Chrome/{softwareVersion} Safari/{$layoutEngine}
+    ; rv:{$softwareVersion}
+     Gecko/{$geckoVersion_PC_Mac} Firefox/{$softwareVersion}
     */
 
     @Override
@@ -33,6 +36,19 @@ public class Chrome implements UserApp {
 
     @Override
     public String getResultSystemInformation() {
+        UserDevice device = userDevice.get();
+
+        if (device == null) {
+            return "";
+        }
+
+        if (device instanceof AndroidPhone
+                || device instanceof Mac
+                || device instanceof PC) {
+            return String.format("; rv:%s",
+                    softwareVersion);
+        }
+
         return "";
     }
 
@@ -45,24 +61,23 @@ public class Chrome implements UserApp {
         }
 
         if (device instanceof iPhone) {
-            return String.format("AppleWebKit/%s (KHTML, like Gecko) CriOS/%s Mobile/%s Safari/%s",
+            return String.format("AppleWebKit/%s (KHTML, like Gecko) FxiOS/%s Mobile/%s Safari/%s",
                     layoutEngine_iOS,
-                    softwareVersion,
+                    softwareVersion_iOS,
                     build_iOS,
                     layoutEngine_iOS);
         }
 
         if (device instanceof Mac
                 || device instanceof PC) {
-            return String.format("AppleWebKit/%s (KHTML, like Gecko) Chrome/%s Safari/%s",
-                    layoutEngine,
-                    softwareVersion,
-                    layoutEngine);
+            return String.format("Gecko/%s Firefox/%s",
+                    geckoVersion_PC_Mac,
+                    softwareVersion);
+
         }
 
-        return String.format("AppleWebKit/%s (KHTML, like Gecko) Chrome/%s Mobile Safari/%s",
-                layoutEngine,
+        return String.format("Gecko/%s Firefox/%s",
                 softwareVersion,
-                layoutEngine);
+                softwareVersion);
     }
 }

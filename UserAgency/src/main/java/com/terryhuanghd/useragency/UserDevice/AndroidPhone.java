@@ -1,5 +1,6 @@
 package com.terryhuanghd.useragency.UserDevice;
 
+import com.terryhuanghd.useragency.UserApp.FireFox;
 import com.terryhuanghd.useragency.UserApp.UserApp;
 
 import java.lang.ref.WeakReference;
@@ -8,16 +9,15 @@ public class AndroidPhone implements UserDevice {
     WeakReference<UserApp> userApp;
 
     String osVersion = "11";
-    String deviceId = "";
 
     /*
-    Chrome
+    // Chrome
     Linux; Android {$osVersion}
     Linux; Android {$osVersion}; {$deviceId}
-    FireFox
+    // FireFox
     Android {$osVersion}; Mobile;
     Android {$osVersion}; Mobile; {$deviceId};
-    Edge
+    // Edge
     Linux; Android {$osVersion}
     Linux; Android {$osVersion}; {$deviceId}
     */
@@ -31,9 +31,13 @@ public class AndroidPhone implements UserDevice {
     public String getResultSystemInformation() {
         UserApp app = userApp.get();
 
-        return String.format("Linux; Android %s%s",
-                osVersion,
-                deviceId);
+        if (app instanceof FireFox) {
+            return String.format("Android %s; Mobile;",
+                    osVersion);
+        }
+
+        return String.format("Linux; Android %s",
+                osVersion);
     }
 }
 

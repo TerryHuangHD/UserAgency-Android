@@ -8,8 +8,10 @@ import androidx.annotation.Nullable;
 
 import com.terryhuanghd.useragency.UserAgency;
 import com.terryhuanghd.useragency.UserApp.Chrome;
+import com.terryhuanghd.useragency.UserApp.FireFox;
 import com.terryhuanghd.useragency.UserApp.Safari;
 import com.terryhuanghd.useragency.UserDevice.AndroidPhone;
+import com.terryhuanghd.useragency.UserDevice.PC;
 import com.terryhuanghd.useragency.UserDevice.iPhone;
 
 public class UserAgencyExample extends Activity {
@@ -25,8 +27,14 @@ public class UserAgencyExample extends Activity {
                 .getString());
 
         Log.e("UA", new UserAgency()
+                .setDevice(new PC())
+                .setApp(new FireFox())
+                .getString());
+
+        Log.e("UA", new UserAgency()
                 .setDevice(new AndroidPhone())
                 .setApp(new Chrome())
                 .getString());
+
     }
 }
