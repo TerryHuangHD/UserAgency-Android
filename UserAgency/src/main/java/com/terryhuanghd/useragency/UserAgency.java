@@ -1,9 +1,9 @@
 package com.terryhuanghd.useragency;
 
-import com.terryhuanghd.useragency.UserApp.Safari;
+import com.terryhuanghd.useragency.UserApp.Chrome;
 import com.terryhuanghd.useragency.UserApp.UserApp;
+import com.terryhuanghd.useragency.UserDevice.AndroidPhone;
 import com.terryhuanghd.useragency.UserDevice.UserDevice;
-import com.terryhuanghd.useragency.UserDevice.iPhone;
 
 public class UserAgency {
     UserApp userApp = null;
@@ -20,8 +20,8 @@ public class UserAgency {
     }
 
     public String getString() {
-        if (userDevice == null) userDevice = new iPhone();
-        if (userApp == null) userApp = new Safari();
+        if (userDevice == null) userDevice = new AndroidPhone();
+        if (userApp == null) userApp = new Chrome();
 
         userDevice.setUserApp(userApp);
         userApp.setUserDevice(userDevice);
