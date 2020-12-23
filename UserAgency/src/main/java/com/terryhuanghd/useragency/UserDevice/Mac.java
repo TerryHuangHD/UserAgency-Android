@@ -1,6 +1,6 @@
 package com.terryhuanghd.useragency.UserDevice;
 
-import com.terryhuanghd.useragency.UserApp.FireFox;
+import com.terryhuanghd.useragency.UserApp.Firefox;
 import com.terryhuanghd.useragency.UserApp.UserApp;
 
 import java.lang.ref.WeakReference;
@@ -30,7 +30,7 @@ public class Mac implements UserDevice {
             return "";
         }
 
-        if (app instanceof FireFox) {
+        if (app instanceof Firefox) {
             return String.format("Macintosh; Intel Mac OS X %s",
                     osVersion);
         }

@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.terryhuanghd.useragency.UserAgency;
 import com.terryhuanghd.useragency.UserApp.Chrome;
-import com.terryhuanghd.useragency.UserApp.FireFox;
+import com.terryhuanghd.useragency.UserApp.Firefox;
 import com.terryhuanghd.useragency.UserApp.Safari;
 import com.terryhuanghd.useragency.UserDevice.AndroidPhone;
 import com.terryhuanghd.useragency.UserDevice.PC;
@@ -28,7 +28,7 @@ public class UserAgencyExample extends Activity {
 
         Log.e("UA", new UserAgency()
                 .setDevice(new PC())
-                .setApp(new FireFox())
+                .setApp(new Firefox())
                 .getString());
 
         Log.e("UA", new UserAgency()

@@ -8,7 +8,7 @@ import com.terryhuanghd.useragency.UserDevice.iPhone;
 
 import java.lang.ref.WeakReference;
 
-public class FireFox implements UserApp {
+public class Firefox implements UserApp {
     WeakReference<UserDevice> userDevice;
 
     String layoutEngine_iOS = "605.1.15";
@@ -26,7 +26,7 @@ public class FireFox implements UserApp {
     Gecko/{$softwareVersion} Firefox/{$softwareVersion}
     // Mac / PC
     ; rv:{$softwareVersion}
-     Gecko/{$geckoVersion_PC_Mac} Firefox/{$softwareVersion}
+    Gecko/{$geckoVersion_PC_Mac} Firefox/{$softwareVersion}
     */
 
     @Override

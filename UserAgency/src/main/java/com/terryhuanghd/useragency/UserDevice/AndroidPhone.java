@@ -1,6 +1,6 @@
 package com.terryhuanghd.useragency.UserDevice;
 
-import com.terryhuanghd.useragency.UserApp.FireFox;
+import com.terryhuanghd.useragency.UserApp.Firefox;
 import com.terryhuanghd.useragency.UserApp.UserApp;
 
 import java.lang.ref.WeakReference;
@@ -31,7 +31,7 @@ public class AndroidPhone implements UserDevice {
     public String getResultSystemInformation() {
         UserApp app = userApp.get();
 
-        if (app instanceof FireFox) {
+        if (app instanceof Firefox) {
             return String.format("Android %s; Mobile;",
                     osVersion);
         }
