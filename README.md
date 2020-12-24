@@ -1,12 +1,12 @@
-# UserAgency-Android
+![UserAgency: User-Agent generator in Swift](https://raw.githubusercontent.com/TerryHuangHD/UserAgency-Android/master/UserAgency.png)
+
 [![Build Status](https://travis-ci.com/TerryHuangHD/UserAgency-Android.svg?branch=main)](https://travis-ci.com/TerryHuangHD/UserAgency-Android)
 [![](https://jitpack.io/v/TerryHuangHD/UserAgency-Android.svg)](https://jitpack.io/#TerryHuangHD/UserAgency-Android)
 [![GitHub license](https://img.shields.io/github/license/TerryHuangHD/UserAgency-Android)](https://github.com/TerryHuangHD/UserAgency-Android/blob/main/LICENSE)
 
 UserAgency is an Android User-Agent generator library written in Java/Kotlin. Provides story-oriented usage, and comprehensive way to mock real life data.
 
-# Download
-You can download a jar from GitHub's [releases page](https://github.com/TerryHuangHD/UserAgency-Android/releases).
+# Install
 
 ### Gradle
 
@@ -50,6 +50,10 @@ Add the dependency
     <version>0.2</version>
 </dependency>
 ```
+
+### Download AAR
+
+Download AAR file from [releases page](https://github.com/TerryHuangHD/UserAgency-Android/releases)
 
 # Usage
 
