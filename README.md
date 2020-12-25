@@ -25,7 +25,7 @@ Add the dependency in your app build.gradle
 
 ```gradle
 dependencies {
-    implementation 'com.github.TerryHuangHD:UserAgency-Android:0.2'
+    implementation 'com.github.TerryHuangHD:UserAgency-Android:0.3'
 }
 ```
 
@@ -67,12 +67,14 @@ Download AAR file from [releases page](https://github.com/TerryHuangHD/UserAgenc
 ```
 
 # Support
-Device \ App  | Chrome | Firefox | Safari
------ |  ----- | ----- | -----
-Android Phone | ✅ | ✅ | ❌
-iPhone | ✅ | ✅ | ✅
-Mac | ✅ | ✅ | ✅
-PC |  ✅ | ✅ | ❌
+Device  |  OS  | Chrome | Safari | Firefox | Edge | IE
+----- |  ----- |  ----- | ----- | ----- | ----- | -----
+AndroidPhone | Android | ✅ | ❌ | ✅ | ✅ | ❌
+AndroidPad | Android | ✅ | ❌ | ✅ | ✅ | ❌
+iPhone | iOS | ✅ | ✅ | ✅ | ✅ | ❌
+iPad | iOS | ✅ | ✅ | ✅ | ✅ | ❌
+Mac | macOS | ✅ | ✅ | ✅ | ✅ | ❌
+WindowsPC | Windows | ✅ | ❌ | ✅ | ✅ | ✅
 
 MIT License
 --------
