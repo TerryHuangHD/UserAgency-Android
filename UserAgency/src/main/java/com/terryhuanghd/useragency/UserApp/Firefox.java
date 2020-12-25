@@ -2,8 +2,9 @@ package com.terryhuanghd.useragency.UserApp;
 
 import com.terryhuanghd.useragency.UserDevice.AndroidPhone;
 import com.terryhuanghd.useragency.UserDevice.Mac;
-import com.terryhuanghd.useragency.UserDevice.PC;
+import com.terryhuanghd.useragency.UserDevice.WindowsPC;
 import com.terryhuanghd.useragency.UserDevice.UserDevice;
+import com.terryhuanghd.useragency.UserDevice.iPad;
 import com.terryhuanghd.useragency.UserDevice.iPhone;
 
 import java.lang.ref.WeakReference;
@@ -24,7 +25,7 @@ public class Firefox implements UserApp {
     // Android Phone / Tablet
     ; rv:{$softwareVersion}
     Gecko/{$softwareVersion} Firefox/{$softwareVersion}
-    // Mac / PC
+    // Mac / WindowsPC
     ; rv:{$softwareVersion}
     Gecko/{$geckoVersion_PC_Mac} Firefox/{$softwareVersion}
     */
@@ -44,7 +45,7 @@ public class Firefox implements UserApp {
 
         if (device instanceof AndroidPhone
                 || device instanceof Mac
-                || device instanceof PC) {
+                || device instanceof WindowsPC) {
             return String.format("; rv:%s",
                     softwareVersion);
         }
@@ -60,7 +61,8 @@ public class Firefox implements UserApp {
             return "";
         }
 
-        if (device instanceof iPhone) {
+        if (device instanceof iPhone
+                || device instanceof iPad) {
             return String.format("AppleWebKit/%s (KHTML, like Gecko) FxiOS/%s Mobile/%s Safari/%s",
                     layoutEngine_iOS,
                     softwareVersion_iOS,
@@ -69,7 +71,7 @@ public class Firefox implements UserApp {
         }
 
         if (device instanceof Mac
-                || device instanceof PC) {
+                || device instanceof WindowsPC) {
             return String.format("Gecko/%s Firefox/%s",
                     geckoVersion_PC_Mac,
                     softwareVersion);

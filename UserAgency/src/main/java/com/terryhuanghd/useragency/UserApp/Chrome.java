@@ -1,9 +1,9 @@
 package com.terryhuanghd.useragency.UserApp;
 
-import com.terryhuanghd.useragency.UserDevice.AndroidPhone;
 import com.terryhuanghd.useragency.UserDevice.Mac;
-import com.terryhuanghd.useragency.UserDevice.PC;
+import com.terryhuanghd.useragency.UserDevice.WindowsPC;
 import com.terryhuanghd.useragency.UserDevice.UserDevice;
+import com.terryhuanghd.useragency.UserDevice.iPad;
 import com.terryhuanghd.useragency.UserDevice.iPhone;
 
 import java.lang.ref.WeakReference;
@@ -22,7 +22,7 @@ public class Chrome implements UserApp {
     AppleWebKit/{$layoutEngine_iOS} (KHTML, like Gecko) CriOS/{softwareVersion} Mobile/{$build_iOS} Safari/{$layoutEngine_iOS}
     // Android Phone / Tablet
     AppleWebKit/{$layoutEngine} (KHTML, like Gecko) Chrome/{softwareVersion} Mobile Safari/{$layoutEngine}
-    // Mac / PC
+    // Mac / WindowsPC
     AppleWebKit/{$layoutEngine} (KHTML, like Gecko) Chrome/{softwareVersion} Safari/{$layoutEngine}
     */
 
@@ -44,7 +44,8 @@ public class Chrome implements UserApp {
             return "";
         }
 
-        if (device instanceof iPhone) {
+        if (device instanceof iPhone
+                || device instanceof iPad) {
             return String.format("AppleWebKit/%s (KHTML, like Gecko) CriOS/%s Mobile/%s Safari/%s",
                     layoutEngine_iOS,
                     softwareVersion,
@@ -53,7 +54,7 @@ public class Chrome implements UserApp {
         }
 
         if (device instanceof Mac
-                || device instanceof PC) {
+                || device instanceof WindowsPC) {
             return String.format("AppleWebKit/%s (KHTML, like Gecko) Chrome/%s Safari/%s",
                     layoutEngine,
                     softwareVersion,

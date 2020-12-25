@@ -4,16 +4,14 @@ import com.terryhuanghd.useragency.UserApp.UserApp;
 
 import java.lang.ref.WeakReference;
 
-public class PC implements UserDevice {
+public class iPad implements UserDevice {
     WeakReference<UserApp> userApp;
 
-    String osVersion = "10.0";
+    String osVersion = "14_3";
 
     /*
-    // Chrome / FireFox / Edge / IE
-    Windows NT {$osVersion}; Win64; x64
-    Windows NT {$osVersion}; WOW64
-    Windows NT {$osVersion}
+    // Safari / Chrome / FireFox / Edge
+    iPad; CPU OS {$osVersion} like Mac OS X
     */
 
     @Override
@@ -29,7 +27,7 @@ public class PC implements UserDevice {
             return "";
         }
 
-        return String.format("Windows NT %s; Win64; x64",
+        return String.format("iPad; CPU OS %s like Mac OS X",
                 osVersion);
     }
 }

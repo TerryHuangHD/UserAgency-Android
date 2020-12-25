@@ -11,7 +11,7 @@ import com.terryhuanghd.useragency.UserApp.Chrome;
 import com.terryhuanghd.useragency.UserApp.Firefox;
 import com.terryhuanghd.useragency.UserApp.Safari;
 import com.terryhuanghd.useragency.UserDevice.AndroidPhone;
-import com.terryhuanghd.useragency.UserDevice.PC;
+import com.terryhuanghd.useragency.UserDevice.WindowsPC;
 import com.terryhuanghd.useragency.UserDevice.iPhone;
 
 public class UserAgencyExample extends Activity {
@@ -27,7 +27,7 @@ public class UserAgencyExample extends Activity {
                 .getString());
 
         Log.e("UA", new UserAgency()
-                .setDevice(new PC())
+                .setDevice(new WindowsPC())
                 .setApp(new Firefox())
                 .getString());
 
