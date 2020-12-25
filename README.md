@@ -67,12 +67,14 @@ Download AAR file from [releases page](https://github.com/TerryHuangHD/UserAgenc
 ```
 
 # Support
-Device \ App  | Chrome | Firefox | Safari
------ |  ----- | ----- | -----
-Android Phone | ✅ | ✅ | ❌
-iPhone | ✅ | ✅ | ✅
-Mac | ✅ | ✅ | ✅
-PC |  ✅ | ✅ | ❌
+Device  |  OS  | Chrome | Firefox | Safari
+----- |  ----- |  ----- | ----- | -----
+AndroidPhone | Android | ✅ | ✅ | ❌
+AndroidPad | Android | ✅ | ✅ | ❌
+iPhone | iOS | ✅ | ✅ | ✅
+iPad | iOS | ✅ | ✅ | ✅
+Mac | macOS | ✅ | ✅ | ✅
+WindowsPC | Windows |  ✅ | ✅ | ❌
 
 MIT License
 --------
